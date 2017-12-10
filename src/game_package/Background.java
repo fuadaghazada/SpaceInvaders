@@ -32,22 +32,22 @@ public class Background
 		this.setY(0);
 	}
 	
-	//draw/paint the background
-	public void draw(Graphics g)
-	{
-		g.drawImage(image1, x, y, null);
-		g.drawImage(image2, x, y + GameFrame.getFrameHeight() - 5, null);
-	}
-	
-	//to update the background so that it moves continuously during the game play
-	public void update()
-	{
-		if(y + GameFrame.getFrameHeight() - 5 == 0)
-		{
-			this.setY(0);
-		}
-		this.setY(y -= speed);
-	}
+    //draw/paint the background
+    public void draw(Graphics g)
+    {
+        g.drawImage(image1, x, y, null);
+        g.drawImage(image2, x, y - GameFrame.getFrameHeight(), null);
+    }
+    
+    //to update the background so that it moves continuously during the game play
+    public void update()
+    {
+        if(y == GameFrame.getFrameHeight())
+        {
+            this.setY(0);
+        }
+        this.setY(y += speed);
+    }
 
 	//ACCESS - MUTATE
 	
